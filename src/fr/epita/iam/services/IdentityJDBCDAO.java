@@ -1,8 +1,4 @@
-/**
- * 
- */
 package fr.epita.iam.services;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
@@ -24,8 +20,9 @@ import fr.epita.iam.datamodel.Identity;
 import fr.epita.iam.exceptions.DaoInitializationException;
 
 /**
- * @author tbrou
- *
+	 * Class to create the JDBCAO for persisting the data from and to the database.
+	 * @author Hot Chocolate 
+	 * 
  */
 public class IdentityJDBCDAO {
 	private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -42,6 +39,7 @@ public class IdentityJDBCDAO {
 	}
 
 	/**
+	 * Create connection to the database and throws exception if instance connection fails
 	 * @throws SQLException
 	 * @throws FileNotFoundException 
 	 */
@@ -105,6 +103,13 @@ public class IdentityJDBCDAO {
 		
 	}
 
+	/**
+	 * Method to translate and format the birthday string into date format for persisting to database.
+	 * logger level severe
+	 * @param birthdate
+	 * @throws Exception
+	 * @return newDateString
+	 */
 	public String identityBirthday(String birthdate){
 		
 		String newDateString= "";
@@ -121,8 +126,10 @@ public class IdentityJDBCDAO {
 	
 	/**
 	 * write an identity in the database
+	 * logger level severe
 	 * @param identity
 	 * @throws SQLException
+	 * 
 	 */
 	public void write(Identity identity) throws SQLException {
 		PreparedStatement pstmt = null;
@@ -144,6 +151,15 @@ public class IdentityJDBCDAO {
 	
 	}
 	
+	/**
+	 * update an identity in the database
+	 * logger level severe
+	 * @param identity
+	 * @throws SQLException
+	 * @return Boolean
+	 * 
+	 * 
+	 */
 	public Boolean update(Identity identity) throws SQLException{
 		PreparedStatement pstmt = null;
 		Boolean rs = false;
@@ -166,6 +182,14 @@ public class IdentityJDBCDAO {
 		return rs;
 	}
 	
+	/**
+	 * Delete  an identity from the database
+	 * logger level severe
+	 * @param uid
+	 * @throws SQLException
+	 * @return Boolean
+	 * 
+	 */
 	public Boolean delete(String uid) throws SQLException{
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt2 = null;

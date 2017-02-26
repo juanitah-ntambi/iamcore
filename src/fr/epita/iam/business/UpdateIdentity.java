@@ -15,8 +15,9 @@ import java.util.logging.Logger;
 import fr.epita.iam.datamodel.Identity;
 import fr.epita.iam.services.IdentityJDBCDAO;
 /**
+ * Here we update and Save the identity
+ * User will have to enter all the details for the identity they wish to update except the uid.
  * @author HotChocolate
- * Here we Create and Save the identity
  */
 public class UpdateIdentity {
 	private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);

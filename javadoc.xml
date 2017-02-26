@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="lib/derbyclient.jar" destdir="doc" doctitle="IamCore_Javadoc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="fr.epita.iam.util,fr.epita.iam.exceptions,fr.epita.iam.services,fr.epita.iam.datamodel,fr.epita.iam.business,fr.epita.iam.launcher,fr.epita.iam.tests" source="1.8" sourcepath="src;test" splitindex="true" use="true" version="true"/>
+    </target>
+</project>

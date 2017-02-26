@@ -4,7 +4,8 @@
 package fr.epita.iam.exceptions;
 
 /**
- * @author tbrou
+ * Data access initialisation Exception
+ * @author Hot Chocolate
  *
  */
 public class DaoInitializationException extends RuntimeException {

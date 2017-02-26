@@ -12,8 +12,8 @@ import java.util.logging.Logger;
 import fr.epita.iam.datamodel.Identity;
 import fr.epita.iam.services.IdentityJDBCDAO;
 /**
- * @author tbrou
  * Here we Create and Save the identity
+ *@author Hot Chocolate
  */
 public class CreateActivity {
 	private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -22,6 +22,11 @@ public class CreateActivity {
 		
 	}
 	
+	/**
+	 * Identity writer method to persist new identity to the database
+	 * @param scanner
+	 * Takes the parameters from the user input
+	 */
 	
 	public static void execute(Scanner scanner){
 		println("Identity Creation");
@@ -30,6 +35,7 @@ public class CreateActivity {
 		println("please input the email address");
 		String email = scanner.nextLine();
 		println("please input the birthday Date in the format MM/dd/yyyy");
+		
 		IdentityJDBCDAO identityWriter = new IdentityJDBCDAO();
 		String birthday = identityWriter.identityBirthday(scanner.nextLine());
 		

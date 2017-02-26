@@ -1,28 +1,27 @@
-/**
- * 
- */
 package fr.epita.iam.business;
-
 import static fr.epita.iam.util.Println.println;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import fr.epita.iam.datamodel.Identity;
 import fr.epita.iam.services.IdentityJDBCDAO;
 
 /**
+ * Class to delete the identity
  * @author Hot Chocolate
- *
+ * 
  */
 public class DeleteIdentity {
 	private static final Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	private DeleteIdentity(){
 		
 	}
+	/**
+	 * Method to search for identity and the delete the specific identity
+	 * @param scanner
+	 */
 	public static void execute(Scanner scanner){
 		println("Identity Deletion");
 				

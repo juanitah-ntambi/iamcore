@@ -12,26 +12,27 @@ import static fr.epita.iam.util.Println.*;
 
 
 /**
- * @author tbrou
- *
+ * Class which has the main method to Launch the application
+ * @author Hot Chocolate
  */
 public class ConsoleLauncher {
 	
 	private ConsoleLauncher() {}
 
 	/**
+	 * main method
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		println("Welcome to the IAM software");
 		Scanner scanner = new Scanner(System.in);
-		//authentication
+		//authentication handled here to control access to the application
 		if (!authenticate(scanner)){
 			end(scanner);
 			return;
 		}
 		
-		//menu
+		//menu from which user select item to use after authentication
 		println("Please select an action :");
 		println("a. create an Identity");
 		println("b. modify an Identity");
@@ -40,21 +41,21 @@ public class ConsoleLauncher {
 		String choice = scanner.nextLine();
 		switch (choice) {
 		case "a":
-			//Create
+			//Method call to Create identity
 			CreateActivity.execute(scanner);
 			break;
 		case "b":
-			//Modify
+			//method call to Modify Identity
 			UpdateIdentity.execute(scanner);
 			break;
 			
 		case "c":
-			//Delete
+			//method call to Delete identity
 			DeleteIdentity.execute(scanner);
 			break;
 			
 		case "d":
-			//Quit
+			//Quit the application
 			end(scanner);
 			return;
 			
@@ -74,6 +75,7 @@ public class ConsoleLauncher {
 	}
 
 	/**
+	 * Method to authenticate the user. Reads the user name and password from a file - dbconfig.properties
 	 * @param scanner
 	 */
 	private static boolean authenticate(Scanner scanner) {

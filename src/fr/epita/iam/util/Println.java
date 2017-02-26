@@ -5,9 +5,10 @@ public class Println {
 		
 	}
 	/**
-	 * @author Hot Chocolate
-	 *  @param line
 	 * Method to Print line
+	 * @param line
+	 * @author Hot Chocolate
+	 * 
 	 */
 	public static void println(String line) {
 	    System.out.println(line);

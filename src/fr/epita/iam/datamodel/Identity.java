@@ -4,8 +4,8 @@
 package fr.epita.iam.datamodel;
 
 /**
- * @author tbrou
- *
+ * Class for the Identity Definition also contains the getters and setters for the Identity data type
+ * @author Hot Chocolate
  */
 public class Identity {
 	
@@ -19,7 +19,6 @@ public class Identity {
 	 * @param displayName
 	 * @param email
 	 * @param birthdate 
-	 * @param password
 	 */
 	public Identity(String uid, String displayName, String email, String birthdate) {
 		this.uid = uid;
@@ -72,7 +71,7 @@ public class Identity {
 		return birthday;
 	}
 	/**
-	 * @param email the email to set
+	 * @param birthday
 	 */
 	public void setbirthday(String birthday) {
 		this.birthday = birthday;
